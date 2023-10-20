@@ -1,0 +1,217 @@
+
+What is Linux Shell?
+
+A shell provide an environment to a user to execute commands and interact with kernel.
+
+Innerbound to outbound architecture:
+
+Hardware --> Kernel --> Shell --> Applications
+
+
+Types of Shell:
+- bash
+- sh
+- ksh
+- tsh
+- fish
+- zsh extended version of zsh
+
+
+________________________
+
+To check which shell is using type in terminal as: echo $0
+
+Whoami -- displays user
+
+Cat /etc/shells
+Cat /etc/os-release
+
+What is shell scripting?
+- Shell script consist of set of commands to perform a task.
+- All the commands execute sequentially.
+- Some task like file manipulation, program execution, user interaction, automation of the task etc can be done.
+
+To execute a script which shell/interpreter do you use?
+
+What is a shebang?  #!/bin/bash 
+
+Sending output to terminal --> echo "Hello World!"
+
+How to run a script:
+
+- Make sure you have execute permission rwx
+- Run using
+./script.sh
+/path/script.sh
+Bash script.sh
+
+- ctrl+c to terminate
+- ctrl + z to stop
+
+------------------------
+Using  # comments
+
+For single line comment we can use #
+
+Multi line comments <<<comment
+
+
+Comment
+
+
+What are variables?
+VAR_NAME=value
+VAR_NAME=$(hostname)
+Echo $VAR_NAME
+
+
+Constant Variable:
+Once you defined a variable and don't want to change it until the end of the script.
+
+Readonly var_name="Hello"
+
+
+-------------------
+
+Arrays: How to define an array?
+
+myArray=(1 2 Hello "Hey Mohan")
+
+How to get values from an Array?
+
+Echo "${myArray[0]}"
+Echo "{myArray[1]}"
+
+How to get length of an Array
+Echo "${#myArray[*]}"
+
+How to get specific values?
+
+Echo "${myArray[*]:1}"   --> 
+
+Echo "${myArray[*]:1:2}" --> 
+
+How to update an array?
+myArray+=(5 6 8)
+
+-----------------
+Arrays Key-Value
+Declare -A myArray
+myArray=( [name]=Paul [age]=20 )
+
+Echo "${myArray[name]}"
+
+____________________________
+
+User interactions:
+
+Taking input from user:
+
+1. Read <var_name>
+
+2. Read -p "Your name" var_name
+
+------------------------
+
+Arithmetic operations: use let inside the operation
+
+x=20
+y=30
+Let multi=$x*$y
+
+1. Using let command
+2. Perform operation inside (()) double brackets.
+------------------------------------------------
+
+Conditional Statements:
+
+If-else
+
+If [ $marks -gt 40 ]
+Then
+	echo "you are pass"
+Else
+	echo "You are fail"
+Fi
+
+Comparison Operators representation in the conditional statement;
+
+
+Equal	 -eq/==
+
+Greaterthanorequalto	 -ge
+
+Lessthanorequalto  	-le
+
+Not Equal 	-ne/!=
+
+Grater Than 	-gt
+
+Less Than 	-lt
+
+---------------------------
+
+Case:
+If there are many conditions then we use case.
+Echo " Hey choose an option'
+
+Echo "a = To see the current date"
+Echo "b = list all the files in current dir"
+
+
+Read choice
+
+Case $choice in
+	a)date;;
+	b)ls;;
+	*) echo "Non a valid input"
+esac
+
+----------------
+
+Logical Operators:  &&, ||, !
+
+Condition1 && Condition2
+- If both conditions are true then true else false
+
+Condition1 || Condition2
+- If vany of the condition is true then true
+
+Condition1 && Condition2 || Condition3
+- Execute condition2 only when 1 is true else execute conditon3
+
+---------------------
+
+Loops:
+
+For loop: 
+For I in 1 2 3 4 5 
+Do
+	echo "Number is $1
+Done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
